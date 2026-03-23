@@ -16,9 +16,11 @@ COPY . .
 
 # Instala dependências
 RUN composer install --ignore-platform-reqs
+# RODA O FIX AUTOMATICAMENTE
+RUN composer fix || true
 
 # Expõe porta
 EXPOSE 8000
 
-# 🔥 IMPORTANTE: usar index.php como router
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "src", "src/index.php"]
+#  IMPORTANTE: usar index.php como router
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "src", "src/router.php"]
