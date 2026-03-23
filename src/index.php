@@ -123,9 +123,8 @@ default:
 // resposta final
 echo json_encode(
     [
-    'valorConvertido' => round($result, 2),
-    'simboloMoeda' => $symbol,
-
+        'valorConvertido' => round($result, 2),
+        'simboloMoeda' => $symbol,
+    ],
     JSON_UNESCAPED_UNICODE
-    ]
 );
